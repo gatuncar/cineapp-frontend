@@ -1,0 +1,20 @@
+<mat-form-field>
+  <input matInput placeholder="Username" [(ngModel)]="usuario.username" readonly>
+</mat-form-field>
+
+<mat-form-field>
+  <input matInput placeholder="IdUsuario" [(ngModel)]="usuario.idUsuario" readonly>
+</mat-form-field>
+
+<div *ngFor="let m of roles">
+  <button mat-menu-item style="cursor: pointer">
+    <mat-icon>ballot</mat-icon>
+    <span>{{m.nombre}}</span>
+  </button>
+  <mat-divider></mat-divider>
+</div>
+
+<img mat-card-image [src]="imagenData" *ngIf="imagenEstado" width="50%" height="50%"/>
+<p>{{labelFile}}</p>
+
+<button mat-raised-button color="accent" (click)="cancelar()">Cancelar</button>
